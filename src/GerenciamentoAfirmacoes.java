@@ -4,6 +4,9 @@ import javax.swing.JTable;
 import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JScrollPane;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GerenciamentoAfirmacoes extends JPanel {
 
@@ -38,6 +41,26 @@ public class GerenciamentoAfirmacoes extends JPanel {
 		table.getColumnModel().getColumn(2).setPreferredWidth(150);
 		table.getColumnModel().getColumn(2).setMinWidth(37);
 		scrollPane.setViewportView(table);
+		
+		JButton btSalvar = new JButton("Salvar Alterações");
+		btSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DefaultTableModel model = ((DefaultTableModel) table.getModel());
+				int linhas = model.getRowCount();
+				String conteudo = "";
+				
+				for (int i = 0 ; i< linhas ; i++) {
+					conteudo += model.getValueAt(i, 0) + ";";
+					conteudo += model.getValueAt(i, 1) + ";";
+					conteudo += model.getValueAt(i, 2) + ";" + "\n";
+					
+				}
+				
+				System.out.print(conteudo);
+				
+			}
+		});
+		add(btSalvar, "cell 9 5");
 		 //DefaultTableModel model = ((DefaultTableModel) table.getModel());
 		
 		

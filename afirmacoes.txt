@@ -1,20 +1,20 @@
-O Sol é a estrela central do Sistema Solar;V
-A água ferve a 50 graus Celsius ao nível do mar;F
-O Brasil é o maior país da América do Sul em extensão territorial;V
-Os morcegos são aves noturnas que se orientam por ecolocalização;F
-Em Java, o método main é o ponto de entrada padrão de um programa;V
-A Grande Muralha da China é visível a olho nu a partir da Lua;F
-O som se propaga mais rápido na água do que no ar;V
-Um byte é composto por exatamente 16 bits;F
-O coração humano possui quatro cavidades;V
-A linguagem HTML é considerada uma linguagem de programação;F
-O planeta Marte é conhecido como o Planeta Vermelho;V
-Os pinguins são aves aquáticas nativas do Polo Norte;F
-Em Java, o tipo String é um tipo de dado primitivo;F
-A velocidade da luz no vácuo é de aproximadamente 300 mil quilômetros por segundo;V
-O Oceano Atlântico é o maior oceano da Terra;F
-O oxigênio é o gás mais abundante na atmosfera terrestre;F
-O Rio Amazonas é o maior rio do mundo em volume de água;V
-Um ano bissexto possui 366 dias;V
-A baleia-azul é o maior peixe do oceano;F
-O sistema binário utiliza apenas os algarismos 0 e 1;V
+Em Python, a indentação é utilizada para definir blocos de código;V;programação
+HTML é uma linguagem de programação;F;programação
+Em Java, o método main é tradicionalmente o ponto de entrada de um programa;V;programação
+Uma variável do tipo boolean armazena apenas números inteiros;F;programação
+CSS é utilizado para definir a aparência visual de páginas web;V;programação
+O comando git commit envia automaticamente as alterações para o GitHub;F;programação
+Em JavaScript, um array pode armazenar vários valores;V;programação
+Em Java, String é considerado um tipo de dado primitivo;F;programação
+SQL é uma linguagem utilizada para consultar bancos de dados relacionais;V;programação
+Todos os arrays de todas as linguagens de programação começam no índice 1;F;programação
+O planeta Terra realiza um movimento de translação ao redor do Sol;V;conhecimentogeral
+O Oceano Atlântico é o maior oceano do planeta;F;conhecimentogeral
+A água é formada por hidrogênio e oxigênio;V;conhecimentogeral
+O corpo humano possui três pulmões;F;conhecimentogeral
+O Brasil é o maior país da América do Sul em extensão territorial;V;conhecimentogeral
+Marte é o planeta mais próximo do Sol;F;conhecimentogeral
+A baleia-azul é considerada o maior animal do planeta;V;conhecimentogeral
+A Grande Muralha da China pode ser vista a olho nu da Lua;F;conhecimentogeral
+O coração humano possui quatro cavidades;V;conhecimentogeral
+A Lua produz sua própria luz, assim como o Sol;F;conhecimentogeral

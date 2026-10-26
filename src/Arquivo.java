@@ -21,7 +21,7 @@ public class Arquivo {
 	public boolean gravar(String texto) {
 		try {
 			bw = new BufferedWriter(new FileWriter(this.nome));
-			bw.write(texto+"/" +"\n");
+			bw.write(texto+"\n");
 			bw.close();
 			return true;
 		} catch (Exception e) {

@@ -2,7 +2,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+
+import javax.imageio.metadata.IIOMetadataFormatImpl;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
@@ -20,11 +24,11 @@ public class Jogar extends JPanel {
 	private Stack<String> listaFrases;
 	private JLabel txtfrase;
 	private JLabel Vhbkjndas;
-	private JLabel vidas;
-	private int vida = 3;
+	public int vida = 3;
 	private final JLabel lblNewLabel = new JLabel("Pontos:");
 	private JLabel JBpontuacao;
 	private int pontos = 0;
+	private JLabel lvVidas;
 
 	public Jogar() {
 
@@ -42,8 +46,9 @@ public class Jogar extends JPanel {
 		this.btFalso.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(this.btFalso, "cell 1 5");
 		
-		vidas = new JLabel("");
-		add(vidas, "cell 1 0");
+		lvVidas = new JLabel("");
+		lvVidas.setForeground(Color.RED);
+		add(lvVidas, "cell 1 0");
 		
 		JBpontuacao = new JLabel("");
 		add(JBpontuacao, "cell 1 1");
@@ -65,11 +70,26 @@ public class Jogar extends JPanel {
 	}
 	
 	public void mostraTexto() {
+		String coracao = "";
+		for (int i = 0; i < vida; i++) {
+			coracao += "❤️";
+		}
+		
+		lvVidas.setText(coracao);
+		
+		JBpontuacao.setText(pontos +"");
+		if	(vida > 0 && listaFrases.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Ganhador", "Parabens", JOptionPane.INFORMATION_MESSAGE);
+			// aqui ganhou
+		}
+		if(vida == 0)  {
+			//jogo perdeu
+			JOptionPane.showMessageDialog(null, "Você perdeu!", "Vidas acabaram", JOptionPane.ERROR_MESSAGE);
+		}
+		
 		if(!listaFrases.peek().isEmpty()) {
 		String[] jogo = listaFrases.peek().split(";") ;
 		txtfrase.setText(jogo[0]);
-		}else {
-			System.out.print("Frase acabou");
 		}
 	}
 	
@@ -103,11 +123,7 @@ public class Jogar extends JPanel {
 		
 		mostraTexto();
 		
-		if	(vida > 0 && listaFrases.isEmpty()) {
-			//jogo ganhou
-		}else if(vida == 0)  {
-			//jogo perdeu
-		}
+		
 		
 		
 	}
@@ -115,7 +131,7 @@ public class Jogar extends JPanel {
 	private void createContents() {
 		setLayout(new MigLayout("", "[grow][grow,center][grow]", "[][][grow][][][grow]"));
 		
-		Vhbkjndas = new JLabel("Vidas Restantes:");
+		Vhbkjndas = new JLabel("Vidas: ");
 		add(Vhbkjndas, "flowx,cell 1 0");
 		add(lblNewLabel, "flowx,cell 1 1");
 		
@@ -127,6 +143,11 @@ public class Jogar extends JPanel {
 		add(txtfrase, "cell 1 3,alignx center");
 		
 		this.btVerdadeiro = new JButton("Verdadeiro");
+		btVerdadeiro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btVerdadeiro.setForeground(Color.BLACK);
 		this.btVerdadeiro.setBackground(Color.GREEN);
 		this.btVerdadeiro.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		

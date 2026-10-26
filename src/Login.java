@@ -47,20 +47,21 @@ public class Login extends JPanel {
 			
 			for (String cadastro : vetor) {
 				String[] vetor2 = cadastro.split(";");
-				System.out.print("nome= " + ape + " senha= " +ps);
+				
 				if(ape.equals(vetor2[1]) && ps.equals(vetor2[2] )) {
 					JOptionPane.showMessageDialog(null, "Usuário Logado!", "Login", JOptionPane.PLAIN_MESSAGE);
-					Tela.frame.setContentPane(new Logado());
+					Logado log = new Logado(ape);
+					Tela.frame.setContentPane(log );
 					Tela.frame.setVisible(true);
+					
 					Tela.frame.getSobre().setEnabled(false);
 					logou = true;
 					break;
-				}else {
-					if(!logou) {
-						JOptionPane.showMessageDialog(null, "Usuário ou Senha Incorreto.", "Erro", JOptionPane.ERROR_MESSAGE);
-						}
 				}
 			} 
+			if(!logou) {
+				JOptionPane.showMessageDialog(null, "Usuário ou Senha Incorreto.", "Erro", JOptionPane.ERROR_MESSAGE);
+				}
 			
 			
 		}

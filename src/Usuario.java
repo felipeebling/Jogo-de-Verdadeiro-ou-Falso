@@ -38,7 +38,7 @@ public boolean UsuarioSalvo(Usuario user) {
 		String  conteudo = arq.ler();
 	
 		String addTexto = user.getNome() +";"+ user.getApelido()+
-				";" + user.getSenha() + "\n";
+				";" + user.getSenha();
 		
 		if	(arq.gravar(conteudo  + addTexto)) {
 			return true;

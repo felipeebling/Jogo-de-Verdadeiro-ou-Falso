@@ -15,12 +15,16 @@ public class Logado extends JPanel {
 	private JButton btRanking;
 	private JButton btHistorico;
 	private JButton btGerenciamento;
+	public String apelidoLogado = "";
 
 	/**
 	 * Create the panel.
 	 */
 	public Logado() {
-
+		
+	}
+	public Logado(String apelido) {
+		this.apelidoLogado = apelido;
 		initComponents();
 		setBounds(100, 100, 450, 280);
 		
@@ -40,13 +44,20 @@ public class Logado extends JPanel {
 		add(this.btHistorico, "cell 1 2");
 		
 		this.btGerenciamento = new JButton("Gerenciamento");
+		btGerenciamento.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Tela.frame.setContentPane(new GerenciamentoAfirmacoes());
+				Tela.frame.setVisible(true);
+				
+			}
+		});
 		add(this.btGerenciamento, "cell 1 2");
 	}
 	
 	private void initComponents() {
 		setLayout(new MigLayout("", "[grow][][grow]", "[grow][][grow]"));
-		
-		this.lblNewLabel = new JLabel("Bem-vindo(a)!" + "nome jogador");
+		System.out.print("apelido recebido: " + apelidoLogado);
+		this.lblNewLabel = new JLabel("Bem-vindo(a)!" + apelidoLogado);
 		this.lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
 		add(this.lblNewLabel, "cell 1 1");
 	}
